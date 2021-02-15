@@ -1,0 +1,746 @@
+@charset "utf-8";
+
+@import "partials/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Raleway|Yantramanav:400,700,800&display=swap');
+
+
+.container {
+  max-width: 1000px;
+}
+
+body {
+  font-family: 'Yantramanav', sans-serif;
+
+  a:focus,
+  a:hover {
+    color: inherit;
+    opacity: 0.6;
+    text-decoration: none;
+  }
+}
+
+.Light {
+  color: #fff !important;
+  .header-sm {
+  .tagline {
+    background: url('/dist/assets/tagline-sm-light.png') no-repeat !important;
+    background-size: contain !important;
+  }
+  .logo {
+    background: url('/dist/assets/logo-sm-light.png') no-repeat !important;
+    background-size: contain !important;
+  }
+ }
+ .header-lg {
+ .tagline {
+   background: url('/dist/assets/tagline-lg-light.png') no-repeat !important;
+   background-size: contain !important;
+ }
+ .logo {
+   background: url('/dist/assets/logo-lg-light-mag.png') no-repeat !important;
+   background-size: contain !important;
+ }
+}
+  p.author {
+    font-size: 18px;
+    color: #fff !important;
+  }
+  a {
+    color: #fff !important;
+  }
+  .bar {
+    background: #fff !important;
+  }
+}
+
+.Dark {
+  color: #111;
+  .header-sm {
+  .tagline {
+    background: url('/dist/assets/tagline-sm-dark.png') no-repeat !important;
+    background-size: contain !important;
+  }
+  .logo {
+    opacity: 0.9;
+    background: url('/dist/assets/logo-sm-dark.png') no-repeat !important;
+    background-size: contain !important;
+  }
+}
+ .header-lg {
+  .tagline {
+    background: url('/dist/assets/tagline-lg-dark.png') no-repeat !important;
+    background-size: contain !important;
+  }
+  .logo {
+    background: url('/dist/assets/logo-lg-dark-mag.png') no-repeat !important;
+    background-size: contain !important;
+  }
+ }
+
+ p.author {
+   font-size: 18px;
+   color: #000;
+ }
+
+  .story-grid a {
+    color: #111 !important;
+  }
+  .bar {
+    background: #111;
+  }
+}
+
+  .btn-menu {
+    outline: none;
+    background: none;
+    border: none;
+    position: absolute;
+    width: 40px;
+    height: 45px;
+    right: 0;
+    z-index: 1000;
+    cursor: pointer;
+    .bar {
+      height: 4px;
+      width: 30px;
+      display: block;
+      margin: 0 0 4px 0;
+      background: #111;
+    }
+  }
+  .btn-menu:hover {
+    cursor: pointer;
+  }
+
+
+
+
+.header-lg {
+  padding: 40px 0;
+  background: #EF4922;
+  @media(max-width: 600px) {
+      height: 10px 0;
+      padding: 40px 0 0 0;
+  }
+  .container {
+    position: relative;
+  }
+  .btn-menu {
+    top: -20px;
+    right: 15px;
+  }
+  .btn-menu:hover,
+  .btn-menu:focus {
+    opacity: 0.5;
+  }
+
+  .tagline {
+    background: url('/dist/assets/tagline-lg-light.png') no-repeat center center;
+    display: block;
+    background-size: contain;
+    text-indent: -9999px;
+    margin-top: 40px;
+    height: 45px;
+    @media(max-width: 1000px) {
+        height: 40px;
+    }
+    @media(max-width: 600px) {
+        height: 20px;
+    }
+  }
+  .logo {
+    background: url('/dist/assets/logo-lg-light-mag.png') no-repeat center center;
+    display: block;
+    background-size: contain;
+    height: 220px;
+    text-indent: -9999px;
+    width: 100%;
+    margin: 0;
+      @media(max-width: 1200px) {
+          height: 200px;
+      }
+      @media(max-width: 990px) {
+          height: 170px;
+      }
+      @media(max-width: 700px) {
+          height: 140px;
+      }
+      @media(max-width: 600px) {
+          height: 100px;
+      }
+  }
+}
+
+.header-sm {
+  .container {
+    position: relative;
+  }
+  .btn-menu {
+    top: 20px;
+    right: 15px;
+    z-index: 100;
+    outline: none;
+  }
+  .brand {
+    display: block;
+    width: 250px;
+    margin-top: 30px;
+  }
+  .tagline {
+    background: url('/dist/assets/tagline-sm-dark.png') no-repeat;
+    height: 12px;
+    text-indent: -9999px;
+    opacity: 0.8;
+    background-size: contain;
+  }
+  .logo {
+    background: url('/dist/assets/logo-sm-dark.png') no-repeat;
+    height: 50px;
+    text-indent: -9999px;
+    opacity: 0.9;
+    background-size: contain;
+  }
+}
+
+.front {
+  .container {
+    max-width: 1000px;
+  }
+  .featured {
+    background: #EF4922;
+    padding-bottom: 0px;
+  .story {
+    height: 500px;
+    width: 100%;
+    background: #555;
+    position: relative;
+    @media(max-width: 600px) {
+      height: 500px;
+    }
+  }
+  .story-image {
+    width: 100%;
+    height: 500px;
+    @media(max-width: 600px) {
+      height: 400px;
+    }
+  }
+  .story-content {
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    padding: 40px 80px;
+    color: #fff !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @media(max-width: 600px) {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: 700;
+      @media(max-width: 600px) {
+        font-size: 30px;
+      }
+    }
+
+    p.author {
+      color: #fff !important;
+    }
+
+    a {
+      color: #fff !important;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+  }
+ }
+}
+
+.Light {
+.logo-columbia-crest {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 15px;
+  top: -20px;
+  display: block;
+  text-indent: -9999px;
+  background: url('/dist/assets/columbia-crest.png') no-repeat center center;
+  background-size: contain;
+}
+}
+.Dark {
+.logo-columbia-crest {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 15px;
+  top: -20px;
+  display: block;
+  text-indent: -9999px;
+  background: url('/dist/assets/columbia-crest-dark.png') no-repeat center center;
+  background-size: contain;
+}
+}
+.logo-columbia {
+  height: 60px;
+  width: 90%;
+  display: block;
+  margin: 0 0 40px 0;
+  text-indent: -9999px;
+  background: url('/dist/assets/columbia-logo.png') no-repeat left center;
+  background-size: contain;
+}
+
+
+.page {
+   width: 100%;
+   background: #fff;
+}
+
+.front .page {
+  padding-top: 120px;
+  margin-top: -50px;
+}
+
+.article-header {
+  background: #CCCFC1;
+  padding: 60px 0;
+  border-bottom: 4px solid #EF4922;
+  position: relative;
+
+  h1 {
+    font-size: 50px;
+    width: 90%;
+    font-weight: 700;
+    @media(max-width: 600px) {
+      font-size: 50px;
+    }
+  }
+  p {
+    font-size: 30px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+  }
+  p.author {
+    font-size: 20px;
+  }
+  p.issue a {
+    font-size: 14px;
+    padding: 0;
+    display: block;
+    color: #000;
+    right: 15px;
+    bottom: 0px;
+    position: absolute;
+    text-transform: uppercase;
+  }
+}
+
+
+.article-content {
+  padding: 30px;
+  background: #fff;
+  margin-top: -40px;
+  font-family: "Raleway", sans-serif;
+  @media(max-width: 600px) {
+    padding: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+    color: #111;
+  }
+
+
+  img {
+    width: 100%;
+    margin: 0 0 30px 0;
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  figure {
+    img {
+     width: 100%;
+     margin: 0;
+    }
+    margin: 0 0 30px 0;
+  }
+
+  p span {
+    font-size: 83px;
+    float: left;
+    line-height: 1;
+    margin: 0 10px 0 0;
+  }
+
+  figcaption {
+    color: #888;
+    margin: 10px 0;
+  }
+
+  blockquote {
+    margin: 30px 0 30px -200px;
+    @media(max-width: 1000px) {
+      margin: 30px 0 30px 0;
+    }
+  }
+
+  blockquote p {
+    font-size: 30px;
+    line-height: 1.4;
+    @media(max-width: 700px) {
+      font-size: 30px;
+    }
+  }
+
+}
+
+
+.issue {
+  .issue-hero {
+    .issue-hero-image {
+      height: 300px;
+      background: #333;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .issue-hero-image--mask {
+      width: 600px;
+      position: absolute;
+      left: -425px;
+      top: 0;
+      height: 600px;
+      background: #EF4922;
+      transform: rotate(45deg);
+    }
+    .issue-hero-number {
+      padding: 40px 0;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    .issue-hero-content {
+      padding: 40px 0;
+      @media(max-width: 600px) {
+          padding: 0 0 40px 0;
+      }
+      h1 {
+        font-weight: 700;
+        font-size: 30px;
+        width: 70%;
+      }
+      p.subtitle {
+        font-size: 20px;
+        font-weight: 400;
+      }
+      a {
+        color: #111;
+      }
+    }
+  }
+  .page {
+    padding: 60px 0;
+  }
+
+  .alumni-notes {
+
+  }
+}
+
+
+.story-grid {
+  .story-grid-column {
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 60px;
+   .story-grid-column--image {
+     background: url(http://api.magazine.harriman.danmccarey.com/sites/default/files/inline-images/image.png) no-repeat center center;
+     background-size: cover;
+     height: 320px;
+     width: 100%;
+     top: 0;
+     position: absolute;
+   }
+   .story-grid-column--image-bottom {
+     bottom: 0;
+     top: auto;
+     left: 0;
+   }
+   .story-grid-column--content {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     z-index: 100;
+     padding: 30px;
+
+     h2 {
+       font-size: 26px;
+       font-weight: 700;
+     }
+
+     p.subtitle {
+       font-family: "Raleway", sans-serif;
+       font-size: 14px;
+     }
+   }
+   .story-grid-column--content-top {
+     top: 0;
+     bottom: auto;
+   }
+   .story-grid-column--mask {
+     background: #EF4922;
+     height: 1000px;
+     width: 1000px;
+     position: absolute;
+   }
+   .story-grid-column--mask-left {
+     transform: rotate(95deg);
+     bottom: -670px;
+     left: -550px;
+   }
+   .story-grid-column--mask-center {
+     transform: rotate(95deg);
+     top: -680px;
+     left: -350px;
+   }
+   .story-grid-column--mask-right {
+     transform: rotate(95deg);
+     bottom: -670px;
+     right: -550px;
+   }
+  }
+}
+
+.story-list {
+  .story-list-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    h2 {
+      margin-top: 0;
+      font-weight: 700;
+    }
+    h2 a {
+      color: #000;
+    }
+  }
+}
+
+.cover-image {
+  width: 100%;
+  margin: 0 0 40px 0;
+}
+
+h2.front-section {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-bottom: 4px solid #ddd;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+.featured-issues {
+  margin-bottom: 80px;
+}
+
+.legal {
+  margin: 80px 0 40px 0;
+  color: #999;
+  text-align: center;
+}
+
+
+.main-menu {
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  display: none;
+}
+.main-menu .container {
+  position: relative;
+}
+.main-menu .content {
+  padding: 40px;
+  color: #fff;
+  @media(max-width: 700px) {
+    padding: 40px 15px;
+  }
+}
+.main-menu h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #999;
+  text-transform: uppercase;
+}
+.main-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.main-menu ul li a {
+  color: #fff;
+  font-size: 24px;
+}
+.main-menu .footer a {
+  color: #fff;
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+.main-menu .footer {
+  background: none;
+  padding: 0px;
+  margin: 0 0 80px 0;
+  @media(max-width: 700px) {
+    margin: 0 0 20px 0;
+  }
+}
+.main-menu .search-input {
+  background: #000;
+  border: 1px solid #555;
+  color: #fff;
+  width: 300px;
+  font-size: 15px;
+  padding: 10px;
+  margin: 0 0 30px 0;
+  @media(max-width: 700px) {
+    width: 180px;
+  }
+}
+
+.btn-close {
+  font-family: "Raleway", sans-serif;
+  background: none;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  right: 40px;
+  top: 30px;
+}
+.btn-close:hover,
+.btn-close:focus {
+  opacity: 0.6;
+}
+
+
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 60px 0 20px 0;
+}
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.footer ul li {
+  margin: 0 0 5px 0;
+}
+.footer ul li a {
+  font-size: 14px;
+  color: #fff;
+}
+.footer .about-menu li a {
+  color: #999;
+}
+.footer .legal {
+  font-size: 12px;
+}
+.footer ul.social-media-icons li {
+  display: inline-block;
+}
+.footer ul.social-media-icons li a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 0 10px 0 0;
+  white-space: nowrap;
+  border-radius: 50%;
+  border: 2px solid #999999;
+  text-indent: -9999px;
+}
+.footer .logo-footer {
+  width: 80%;
+  height: 60px;
+  display: block;
+  margin-bottom: 40px;
+  background: url('/dist/assets/logo-lg-light-mag.png') no-repeat left;
+  background-size: contain;
+  text-indent: -9999px;
+}
+.icon-facebook {
+  background: url('/dist/assets/icon-facebook.png') no-repeat center center;
+  background-size: 20%;
+}
+.icon-twitter {
+  background: url('/dist/assets/icon-twitter.png') no-repeat center center;
+  background-size: 50%;
+}
+.icon-instagram {
+  background: url('/dist/assets/icon-instagram.png') no-repeat center center;
+  background-size: 50%;
+}
+.icon-youtube {
+  background: url('/dist/assets/icon-youtube.png') no-repeat center center;
+  background-size: 50%;
+}
+
+.recent-issues {
+   margin: 0 0 80px 0;
+   a {
+    display: block;
+    width: 100%;
+    height: 300px;
+    background: #eee;
+  }
+}
+
+.director-letter {
+  padding: 15px 40px;
+  margin: 0 0 60px 0;
+  background: #f2f2f2;
+}
+.alumni-notes {
+  padding: 15px 40px;
+  background: #f2f2f2;
+}
+.director-letter h2,
+.alumni-notes h2 {
+  font-weight: 700;
+}
+.director-letter p,
+.alumni-notes p {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+}
+.director-letter a,
+.alumni-notes a {
+  color: #000 !important;
+}
+
+.front-featured {
+   margin: 0 0 80px 0;
+   a {
+    display: block;
+    width: 100%;
+    height: 300px;
+    background: #eee;
+  }
+}

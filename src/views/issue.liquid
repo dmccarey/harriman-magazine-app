@@ -1,0 +1,243 @@
+{% if content.length === 0 %}
+  <p style="text-align: center; margin: 50px 0;">No content has been added to this issue.</p>
+{% else %}
+
+    {% for article in content | limit: 1 %}
+      {% include "head" title=article.issue %}
+    {% endfor %}
+
+    {% for article in content | limit: 1 %}
+    <div class="issue {{ article.field_primary_text_color }}">
+    <div class="header-sm" style="background: {{ article.field_secondary_color }};">
+    {% endfor %}
+     <div class="container">
+       <button class="btn-menu">
+         <span class="bar"></span>
+         <span class="bar"></span>
+         <span class="bar"></span>
+       </button>
+     <div class="row">
+       <div class="col-sm-12">
+         <a class="brand" href="/">
+         <div class="tagline">The Harriman Institute at Columbia University</div>
+         <div class="logo">Harriman</div>
+         </a>
+      </div>
+     </div>
+    </div>
+    </div>
+
+    {% include "menu" %}
+
+    {% for article in content | limit: 1 %}
+    <div class="issue-header {{ article.field_primary_text_color }}" style="background: {{ article.field_secondary_color }}; border-bottom: 4px solid {{ article.field_primary_color }};">
+    {% endfor %}
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            {% for article in content | limit: 1 %}
+
+            <div class="issue-hero">
+              <a href="/article/{{ article.nid }}">
+               <div class="issue-hero-image" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat; background-size: cover;">
+                 <div class="issue-hero-image--mask" style="background: {{ article.field_primary_color }}"></div>
+               </div>
+              </a>
+               <div class="row">
+                 <div class="col-sm-4">
+                   <div class="issue-hero-number">
+                   <b>{{ article.issue }}</b>
+                   </div>
+                 </div>
+                 <div class="col-sm-8">
+                   <div class="issue-hero-content">
+                      <a href="/article/{{ article.nid }}"><h1>{{ article.title }}</h1></a>
+                      <p class="subtitle">{{ article.field_subtitle }}</p>
+                      <p class="author">{{ article.field_author }}</p>
+                   </div>
+                </div>
+               </div>
+            </div>
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="page">
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+        {% for article in extras  %}
+         {% if article.term_node_tid = 36 %}
+         <div class="director-letter" style="border-left: solid 4px {{ article.field_primary_color }}">
+           <h2><a href="/article/{{ article.nid }}">From the Director</a></h2>
+           <p><a href="/article/{{ article.nid }}">Read letter from the Director &raquo;</a></p>
+         </div>
+         {% endif %}
+         {% endfor %}
+       </div>
+      </div>
+    </div>
+
+
+      <div class="container">
+        <div class="row">
+
+          <div class="story-grid">
+          <div class="col-sm-4">
+           {% for article in content | limit: 1 | offset: 1 %}
+           {% if article.term_node_tid != 36 %}
+            <a href="/article/{{ article.nid }}">
+            <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+              <div class="story-grid-column--image" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat; background-size: cover;"></div>
+              <div class="story-grid-column--content">
+                 <h2>{{ article.title }}</h2>
+                 <p class="subtitle">{{ article.field_subtitle }}</p>
+                 <p class="author">{{ article.field_author }}</p>
+              </div>
+              <div class="story-grid-column--mask story-grid-column--mask-left" style="background: {{ article.field_primary_color }}"></div>
+            </div>
+            </a>
+           {% endif %}
+           {% endfor %}
+          </div>
+          <div class="col-sm-4">
+            {% for article in content | limit: 1 | offset: 2 %}
+            {% if article.term_node_tid != 36 %}
+             <a href="/article/{{ article.nid }}">
+            <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+              <div class="story-grid-column--image story-grid-column--image-bottom" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat center center; background-size: cover;"></div>
+              <div class="story-grid-column--content story-grid-column--content-top">
+                <h2>{{ article.title }}</h2>
+                <p class="subtitle">{{ article.field_subtitle }}</p>
+                <p class="author">{{ article.field_author }}</p>
+              </div>
+              <div class="story-grid-column--mask story-grid-column--mask-center" style="background: {{ article.field_primary_color }}"></div>
+            </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+          </div>
+          <div class="col-sm-4">
+            {% for article in content | limit: 1 | offset: 3 %}
+            {% if article.term_node_tid != 36 %}
+             <a href="/article/{{ article.nid }}">
+            <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+              <div class="story-grid-column--image" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat center bottom; background-size: cover;"></div>
+              <div class="story-grid-column--content">
+                <h2>{{ article.title }}</h2>
+                <p class="subtitle">{{ article.field_subtitle }}</p>
+                <p class="author">{{ article.field_author }}</p>
+              </div>
+              <div class="story-grid-column--mask story-grid-column--mask-right" style="background: {{ article.field_primary_color }}"></div>
+            </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+          </div>
+          </div>
+
+
+        <div class="story-grid">
+        <div class="col-sm-4">
+         {% for article in content | limit: 1 | offset: 4 %}
+         {% if article.term_node_tid != 36 %}
+          <a href="/article/{{ article.nid }}">
+          <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+            <div class="story-grid-column--image" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat; background-size: cover;"></div>
+            <div class="story-grid-column--content">
+               <h2>{{ article.title }}</h2>
+               <p class="subtitle">{{ article.field_subtitle }}</p>
+               <p class="author">{{ article.field_author }}</p>
+            </div>
+            <div class="story-grid-column--mask story-grid-column--mask-left" style="background: {{ article.field_primary_color }}"></div>
+          </div>
+          </a>
+          {% endif %}
+         {% endfor %}
+        </div>
+        <div class="col-sm-4">
+          {% for article in content | limit: 1 | offset: 5 %}
+           {% if article.term_node_tid != 36 %}
+           <a href="/article/{{ article.nid }}">
+          <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+            <div class="story-grid-column--image story-grid-column--image-bottom" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat center center; background-size: cover;"></div>
+            <div class="story-grid-column--content story-grid-column--content-top">
+              <h2>{{ article.title }}</h2>
+              <p class="subtitle">{{ article.field_subtitle }}</p>
+              <p class="author">{{ article.field_author }}</p>
+            </div>
+            <div class="story-grid-column--mask story-grid-column--mask-center" style="background: {{ article.field_primary_color }}"></div>
+          </div>
+          </a>
+           {% endif %}
+          {% endfor %}
+        </div>
+        <div class="col-sm-4">
+          {% for article in content | limit: 1 | offset: 6 %}
+          {% if article.term_node_tid != 36 %}
+           <a href="/article/{{ article.nid }}">
+          <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+            <div class="story-grid-column--image" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat center bottom; background-size: cover;"></div>
+            <div class="story-grid-column--content">
+              <h2>{{ article.title }}</h2>
+              <p class="subtitle">{{ article.field_subtitle }}</p>
+              <p class="author">{{ article.field_author }}</p>
+            </div>
+            <div class="story-grid-column--mask story-grid-column--mask-right" style="background: {{ article.field_primary_color }}"></div>
+          </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+        </div>
+      </div>
+
+
+      <div class="story-list">
+        <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+        {% for article in content | offset: 7 %}
+          <div class="story-list-item">
+            <h2><a href="/article/{{ article.nid }}">{{ article.title }}<a/></h2>
+            <p class="subtitle">{{ article.field_subtitle }}</p>
+            <p class="author">{{ article.field_author }}</p>
+          </div>
+        {% endfor %}
+        </div>
+        </div>
+      </div>
+
+      </div>
+
+
+      <div class="container">
+        <div class="row">
+         <div class="col-sm-12">
+          {% for article in extras %}
+          {% if article.term_node_tid = 4 %}
+           <div class="director-letter" style="border-left: solid 4px {{ article.field_primary_color }}">
+          <h2><a href="/article/{{ article.nid }}">Alumni notes</a></h2>
+          <p><a href="/article/{{ article.nid }}">View Alumni Notes &raquo;</a></p>
+          {% endif %}
+          {% endfor %}
+          </div>
+         </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+{% include "footer" %}
+
+{% endif %}

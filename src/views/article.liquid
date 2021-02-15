@@ -1,0 +1,54 @@
+{% include "head" title=content.title %}
+
+<div class="article {{ content.field_theme }}">
+
+  <div class="header-sm" style="background: {{ content.field_secondary_color }};">
+ <div class="container">
+     <button class="btn-menu">
+       <span class="bar"></span>
+       <span class="bar"></span>
+       <span class="bar"></span>
+     </button>
+ <div class="row">
+   <div class="col-sm-12">
+     <a class="brand" href="/">
+       <div class="tagline">The Harriman Institute at Columbia University</div>
+       <div class="logo">Harriman</div>
+     </a>
+  </div>
+ </div>
+</div>
+</div>
+
+{% include "menu" %}
+
+
+<div class="article-header" style="background: {{ content.field_secondary_color }}; border-bottom: 4px solid {{ content.field_primary_color }};">
+ <div class="container">
+ <div class="row">
+   <div class="col-sm-10 col-sm-offset-1">
+     <h1>{{ content.title }}</h1>
+     <p class="subtitle">{{ content.field_subtitle }}</p>
+     <p class="author">{{ content.field_author }}</p>
+     <p class="issue"><a href="/issue/{{ content.issue }}"><b>{{ content.issue_title }}</b></a></p>
+  </div>
+ </div>
+</div>
+</div>
+
+
+<div class="page">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="article-content">
+          {{ content.body }}
+        </div>
+      <div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% include "footer" %}

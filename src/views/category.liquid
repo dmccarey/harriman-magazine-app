@@ -1,0 +1,60 @@
+{% include "head" title=category %}
+
+
+<div class="issue Dark">
+<div class="header-sm" style="background: '#ffffff'};">
+ <div class="container">
+   <button class="btn-menu">
+     <span class="bar"></span>
+     <span class="bar"></span>
+     <span class="bar"></span>
+   </button>
+ <div class="row">
+   <div class="col-sm-12">
+     <a class="brand" href="/">
+     <div class="tagline">The Harriman Institute at Columbia University</div>
+     <div class="logo">Harriman</div>
+     </a>
+  </div>
+ </div>
+</div>
+</div>
+
+{% include "menu" %}
+
+
+<div class="page">
+  <div class="container">
+    <div class="row">
+
+      <div class="story-grid">
+
+
+       {% for article in content  %}
+       <div class="col-sm-4">
+        <a href="/article/{{ article.nid }}">
+        <div class="story-grid-column Dark">
+          <div class="story-grid-column--image" style="background: url(https://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat; background-size: cover;"></div>
+          <div class="story-grid-column--content">
+             <h2>{{ article.title }}</h2>
+             <p class="subtitle">{{ article.field_subtitle }}</p>
+             <p class="author">{{ article.field_author }}</p>
+          </div>
+          <div class="story-grid-column--mask story-grid-column--mask-left" style="background: #F5F6EB;"></div>
+        </div>
+        </a>
+        </div>
+       {% endfor %}
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+{% include "footer" %}

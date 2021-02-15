@@ -1,0 +1,180 @@
+{% include "head" title="Home" %}
+
+<div class="front">
+
+  <div class="{{ config.field_primary_text_color_page }}">
+    <div class="header-lg" style="background: {{ config.field_secondary_color }};">
+     <div class="container">
+       <a href="https://www.columbia.edu/" class="logo-columbia-crest">Columbia University</a>
+       <button class="btn-menu">
+         <span class="bar"></span>
+         <span class="bar"></span>
+         <span class="bar"></span>
+       </button>
+     <div class="row">
+       <div class="col-sm-12">
+         <a href="/">
+         <div class="tagline">The Harriman Institute at Columbia University</div>
+         <div class="logo">Harriman</div>
+         </a>
+      </div>
+     </div>
+   </div>
+  </div>
+ </div>
+
+  {% include "menu" %}
+
+<div class="featured {{ config.field_primary_text_color_page }}" style="background: {{ config.field_secondary_color }};">
+  <div class="container">
+   <div class="row">
+   <div class="col-sm-12">
+    <div class="story">
+      {% for article in content | limit: 1 %}
+       <a href="{{ article.field_stub_url }}">
+      {% endfor %}
+        {% for article in content | limit: 1 %}
+       <div class="story-image" style="background: url('https://api.magazine.harriman.danmccarey.com{{ article.field_stub_image }}') no-repeat center center; background-size: cover;"></div>
+       {% endfor %}
+       </a>
+       {% for article in content | limit: 1 %}
+        <div class="story-content">
+          <h1><a href="{{ article.field_stub_url }}">{{ article.title }}</a></h1>
+          <p class="author">{{ article.field_author }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    </div>
+     </div>
+   </div>
+ </div>
+
+<div class="page" style="border-top: 4px solid {{ config.field_primary_color }};">
+ <div class="container">
+   <h2 class="front-section">Featured</h2>
+  <div class="row {{ config.field_secondary_text_color_page }}">
+    <div class="story-grid">
+    {% for article in content | limit: 1 | offset: 1 %}
+    <div class="col-sm-4">
+      <a href="{{ article.field_stub_url }}">
+      <div class="story-grid-column" style="background: {{ config.field_primary_color }}">
+        <div class="story-grid-column--image" style="background: url('https://api.magazine.harriman.danmccarey.com{{ article.field_stub_image }}') no-repeat; background-size: cover;"></div>
+        <div class="story-grid-column--content">
+          <h2>{{ article.title }}</h2>
+          <p class="subtitle">{{ article.field_stub_subtitle }}</p>
+          <p class="author">{{ article.field_stub_author }}</p>
+        </div>
+        <div class="story-grid-column--mask story-grid-column--mask-left" style="background: {{ config.field_primary_color }};"></div>
+      </div>
+      </a>
+    </div>
+    {% endfor %}
+    {% for article in content | limit: 1 | offset: 2 %}
+    <div class="col-sm-4">
+      <a href="{{ article.field_stub_url }}">
+      <div class="story-grid-column" style="background: {{ config.field_primary_color }}">
+        <div class="story-grid-column--image story-grid-column--image-bottom" style="background: url('https://api.magazine.harriman.danmccarey.com{{ article.field_stub_image }}') no-repeat center bottom; background-size: cover;"></div>
+        <div class="story-grid-column--content story-grid-column--content-top">
+          <h2>{{ article.title }}</h2>
+          <p class="subtitle">{{ article.field_stub_subtitle }}</p>
+          <p class="author">{{ article.field_stub_author }}</p>
+        </div>
+        <div class="story-grid-column--mask story-grid-column--mask-center" style="background: {{ config.field_primary_color }};"></div>
+      </div>
+      </a>
+    </div>
+    {% for article in content | limit: 1 | offset: 3 %}
+    <div class="col-sm-4">
+      <a href="{{ article.field_stub_url }}">
+      <div class="story-grid-column" style="background: {{ config.field_primary_color }}">
+        <div class="story-grid-column--image" style="background: url('https://api.magazine.harriman.danmccarey.com{{ article.field_stub_image }}') no-repeat center right; background-size: cover;"></div>
+        <div class="story-grid-column--content">
+          <h2>{{ article.title }}</h2>
+          <p class="subtitle">{{ article.field_stub_subtitle }}</p>
+          <p class="author">{{ article.field_stub_author }}</p>
+        </div>
+        <div class="story-grid-column--mask story-grid-column--mask-right" style="background: {{ config.field_primary_color }};"></div>
+      </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+
+  <div class="featured-issues">
+  <h2 class="front-section">Recent Issues</h2>
+    <div class="row">
+  {% for issue in issues | limit: 4 %}
+    <div class="col-xs-6 col-sm-3">
+      <a href="/issue/{{ issue.nid }}">
+        {% if issue.field_cover_image %}
+        <img class="cover-image" src="http://api.magazine.harriman.danmccarey.com/{{ issue.field_cover_image }}" />
+        {% else %}
+        <img class="cover-image" src="https://api.magazine.harriman.danmccarey.com/sites/default/files/default_images/default.png" />
+        {% endif %}
+      </a>
+    </div>
+  {% endfor %}
+  </div>
+  </div>
+
+ </div>
+</div>
+
+
+
+<!--
+<div class="front-featured">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Podcast</h2>
+          {% for article in content %}
+            <a class="issue-cover" style="background: {{ config.field_primary_color }}" href="/">Content</a>
+          {% endfor %}
+      </div>
+      <div class="col-sm-6">
+        <h2>PostDoc News</h2>
+        <a class="issue-cover" style="background: {{ config.field_primary_color }}" href="/">Content</a>
+      </div>
+      <div class="col-sm-6">
+        <h2>Student Spotlight</h2>
+        <a class="issue-cover" style="background: {{ config.field_primary_color }}" href="/">Content</a>
+      </div>
+      <div class="col-sm-6">
+        <h2>Alumni Notes</h2>
+        <a class="issue-cover" style="background: {{ config.field_primary_color }}" href="/">Content</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="recent-issues">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Recent Issues</h2>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <a class="cover-image" style="background: {{ config.field_primary_color }}" href="/">Issue</a>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <a class="cover-image" style="background: {{ config.field_primary_color }}" href="/">Issue</a>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <a class="cover-image" style="background: {{ config.field_primary_color }}" href="/">Issue</a>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <a class="cover-image" style="background: {{ config.field_primary_color }}" href="/">Issue</a>
+      </div>
+    </div>
+  </div>
+-->
+
+
+
+</div>
+
+</div><!-- End front -->
+
+{% include "footer" title="Home" %}

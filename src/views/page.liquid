@@ -1,0 +1,22 @@
+{% include "head" title="Home" %}
+{% include "header" user=user %}
+
+<div class="interview">
+<div class="container">
+{% for interview in content %}
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-3">
+     <h1>{{ interview.title }}</h1>
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-sm-8 col-sm-offset-3">
+     <div class="interview-transcript">
+     {{ interview.body }}
+     </div>
+  </div>
+ </div>
+{% endfor %}
+</div>
+</div>
+{% include "footer" title="Home" %}

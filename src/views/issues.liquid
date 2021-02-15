@@ -1,0 +1,49 @@
+{% include "head" title="Issues" %}
+
+
+<div class="issue Dark">
+<div class="header-sm" style="background: '#ffffff'};">
+ <div class="container">
+   <button class="btn-menu">
+     <span class="bar"></span>
+     <span class="bar"></span>
+     <span class="bar"></span>
+   </button>
+ <div class="row">
+   <div class="col-sm-12">
+     <a class="brand" href="/">
+     <div class="tagline">The Harriman Institute at Columbia University</div>
+     <div class="logo">Harriman</div>
+     </a>
+  </div>
+ </div>
+</div>
+</div>
+
+{% include "menu" %}
+
+<div class="page">
+  <div class="container">
+    <div class="row">
+
+    {% for issue in content %}
+      <div class="col-xs-6 col-sm-3">
+        <a href="/issue/{{ issue.nid }}">
+          {% if issue.field_cover_image %}
+          <img class="cover-image" src="http://api.magazine.harriman.danmccarey.com/{{ issue.field_cover_image }}" />
+          {% else %}
+          <img class="cover-image" src="https://api.magazine.harriman.danmccarey.com/sites/default/files/default_images/default.png" />
+          {% endif %}
+        </a>
+      </div>
+    {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+{% include "footer" %}
