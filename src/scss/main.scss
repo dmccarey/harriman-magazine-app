@@ -22,6 +22,7 @@ body {
 .Light {
   color: #fff !important;
   .header-sm {
+
   .tagline {
     background: url('/dist/assets/tagline-sm-light.png') no-repeat !important;
     background-size: contain !important;
@@ -29,6 +30,15 @@ body {
   .logo {
     background: url('/dist/assets/logo-sm-light.png') no-repeat !important;
     background-size: contain !important;
+  }
+  .logo-columbia-crest {
+    right: 15px;
+    top: 15px;
+  }
+  @media (max-width: 600px) {
+    .logo-columbia-crest {
+      display: none !important;
+    }
   }
  }
  .header-lg {
@@ -41,6 +51,7 @@ body {
    background-size: contain !important;
  }
 }
+  p.translator,
   p.author {
     font-size: 18px;
     color: #fff !important;
@@ -77,6 +88,9 @@ body {
   }
  }
 
+ p.translator, {
+   font-size: 14px;
+ }
  p.author {
    font-size: 18px;
    color: #000;
@@ -169,6 +183,11 @@ body {
           height: 100px;
       }
   }
+  .logo-columbia-crest {
+    left: 20px;
+    right: auto;
+    top: -20px;
+  }
 }
 
 .header-sm {
@@ -177,9 +196,14 @@ body {
   }
   .btn-menu {
     top: 20px;
-    right: 15px;
+    right: 65px;
     z-index: 100;
     outline: none;
+  }
+  @media (max-width: 600px) {
+    .btn-menu {
+      right: 15px;
+    }
   }
   .brand {
     display: block;
@@ -199,6 +223,15 @@ body {
     text-indent: -9999px;
     opacity: 0.9;
     background-size: contain;
+  }
+  .logo-columbia-crest {
+    right: 15px;
+    top: 15px;
+  }
+  @media (max-width: 600px) {
+    .logo-columbia-crest {
+      display: none !important;
+    }
   }
 }
 
@@ -265,26 +298,32 @@ body {
   width: 40px;
   height: 40px;
   position: absolute;
-  left: 15px;
-  top: -20px;
   display: block;
   text-indent: -9999px;
   background: url('/dist/assets/columbia-crest.png') no-repeat center center;
   background-size: contain;
 }
 }
+
 .Dark {
 .logo-columbia-crest {
   width: 40px;
   height: 40px;
   position: absolute;
-  left: 15px;
-  top: -20px;
   display: block;
   text-indent: -9999px;
   background: url('/dist/assets/columbia-crest-dark.png') no-repeat center center;
   background-size: contain;
 }
+}
+.logo-columbia-crest {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  display: block;
+  text-indent: -9999px;
+  background: url('/dist/assets/columbia-crest-dark.png') no-repeat center center;
+  background-size: contain;
 }
 .logo-columbia {
   height: 60px;
@@ -295,6 +334,7 @@ body {
   background: url('/dist/assets/columbia-logo.png') no-repeat left center;
   background-size: contain;
 }
+
 
 
 .page {
@@ -325,6 +365,9 @@ body {
     font-size: 30px;
     font-family: "Raleway", sans-serif;
     font-weight: 400;
+  }
+  p.translator, {
+    font-size: 14px;
   }
   p.author {
     font-size: 20px;
@@ -464,6 +507,7 @@ body {
     position: relative;
     overflow: hidden;
     margin-bottom: 60px;
+    background: #f9f9f9;
 
    .story-grid-column--image {
      background: url(http://api.magazine.harriman.danmccarey.com/sites/default/files/inline-images/image.png) no-repeat center center;
