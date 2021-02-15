@@ -4,7 +4,6 @@ var request = require('request')
 var _ = require('underscore')
 var compression = require('compression')
 var app = express()
-var Promise = require('promise')
 var bodyParser = require('body-parser')
 var fetch = require('node-fetch')
 var expressLiquid = require('express-liquid')
@@ -13,6 +12,7 @@ var moment = require('moment')
 var fs = require('fs')
 var jsonfile = require('jsonfile')
 var capitalize = require('capitalize')
+var axios = require('axios')
 
 //var sent = JSON.parse(fs.readFileSync('./src/json/sent.json', 'utf8'))
 app.use(compression())
@@ -192,6 +192,35 @@ app.get('/issues', function(req, res) {
  * Route: Category
  * =============================================================================
  */
+ app.get('/authors/:id/:name', function(req, res) {
+   const id = req.params.id
+   const name = req.params.name
+   axios.all([
+     axios.get(`${config.apiUrl}/categories/${id}`),
+     axios.get(`${config.apiUrl}/term-detail/${id}`),
+   ]).then((data) => {
+     console.log(data)
+     res.render('author', { content: data[0].data, term: data[1].data[0], category: name })
+   }).catch((err) => {
+     console.log(err)
+   })
+ })
+
+ app.get('/translators/:id/:name', function(req, res) {
+   const id = req.params.id
+   const name = req.params.name
+   axios.all([
+     axios.get(`${config.apiUrl}/categories/${id}`),
+     axios.get(`${config.apiUrl}/term-detail/${id}`),
+   ]).then((data) => {
+     console.log(data)
+     res.render('author', { content: data[0].data, term: data[1].data[0], category: name })
+   }).catch((err) => {
+     console.log(err)
+   })
+ })
+
+
 app.get('/essays', function(req, res) {
   var endpoint = config.apiUrl + '/categories/2'
    request({
