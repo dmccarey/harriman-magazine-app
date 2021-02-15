@@ -25,9 +25,10 @@ ssh -i $SSH_KEY_PATH $SERVER $PARAMS 'bash -i'  <<-'ENDSSH'
 
     rm -rf node_modules/
 
-    npm install
+    pm2 stop all
 
-    pm2 restart all
+    npm install
+    pm2 start npm -- run start
     pm2 save
     pm2 list
 

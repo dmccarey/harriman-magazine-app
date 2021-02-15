@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "npm run css & npm run css:watch & npm run serve",
+    "deploy": "sh ./scripts/deploy.sh",
     "redis": "redis-server /usr/local/etc/redis.conf",
     "serve": "./node_modules/nodemon/bin/nodemon.js --ignore /src/json/popular.json app.js",
     "css": "node-sass src/scss/main.scss -o dist --output-style compressed",
