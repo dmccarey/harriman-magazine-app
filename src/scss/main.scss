@@ -236,7 +236,6 @@ body {
     @media(max-width: 600px) {
       padding: 20px;
     }
-
     h1 {
       font-size: 50px;
       font-weight: 700;
@@ -486,13 +485,23 @@ body {
      padding: 30px;
 
      h2 {
-       font-size: 26px;
+       font-size: 22px;
        font-weight: 700;
+     }
+     @media(max-width: 1000px) {
+       h2 {
+         font-size: 18px;
+       }
      }
 
      p.subtitle {
        font-family: "Raleway", sans-serif;
        font-size: 14px;
+     }
+     @media(max-width: 1000px) {
+       p.subtitle {
+         font-size: 12px;
+       }
      }
    }
    .story-grid-column--content-top {
