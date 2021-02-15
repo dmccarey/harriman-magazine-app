@@ -499,27 +499,8 @@ body {
      top: 0;
      bottom: auto;
    }
-   .story-grid-column--mask {
-     background: #EF4922;
-     height: 1000px;
-     width: 1000px;
-     position: absolute;
-   }
-   .story-grid-column--mask-left {
-     transform: rotate(95deg);
-     bottom: -670px;
-     left: -550px;
-   }
-   .story-grid-column--mask-center {
-     transform: rotate(95deg);
-     top: -680px;
-     left: -350px;
-   }
-   .story-grid-column--mask-right {
-     transform: rotate(95deg);
-     bottom: -670px;
-     right: -550px;
-   }
+
+
   }
 }
 
