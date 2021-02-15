@@ -464,6 +464,7 @@ body {
     position: relative;
     overflow: hidden;
     margin-bottom: 60px;
+
    .story-grid-column--image {
      background: url(http://api.magazine.harriman.danmccarey.com/sites/default/files/inline-images/image.png) no-repeat center center;
      background-size: cover;
@@ -487,10 +488,16 @@ body {
      h2 {
        font-size: 22px;
        font-weight: 700;
+       margin-top: 0;
      }
      @media(max-width: 1000px) {
        h2 {
          font-size: 18px;
+       }
+     }
+     @media(max-width: 600px) {
+       h2 {
+         font-size: 26px;
        }
      }
 
