@@ -29,6 +29,7 @@
 
     {% for issue in content %}
       <div class="col-xs-6 col-sm-3">
+      {% if issue.field_link_to_pdf != "true" %}
         <a href="/issue/{{ issue.nid }}">
           {% if issue.field_cover_image %}
           <img class="cover-image" src="http://api.magazine.harriman.danmccarey.com/{{ issue.field_cover_image }}" />
@@ -36,6 +37,16 @@
           <img class="cover-image" src="https://api.magazine.harriman.danmccarey.com/sites/default/files/default_images/default.png" />
           {% endif %}
         </a>
+      {% endif %}
+      {% if issue.field_link_to_pdf == "true" %}
+        <a target="blank" href="https://api.magazine.harriman.danmccarey.com/{{ issue.field_pdf }}">
+          {% if issue.field_cover_image %}
+          <img class="cover-image" src="http://api.magazine.harriman.danmccarey.com/{{ issue.field_cover_image }}" />
+          {% else %}
+          <img class="cover-image" src="https://api.magazine.harriman.danmccarey.com/sites/default/files/default_images/default.png" />
+          {% endif %}
+        </a>
+      {% endif %}
       </div>
     {% endfor %}
 
