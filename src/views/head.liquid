@@ -4,7 +4,9 @@
 	<title>{{ title }} | Harriman Magazine</title>
 	<link rel="shortcut icon" href="/dist/favicon-crown.png" type="image/png" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta description="Home of Harriman Magazine, the magazine of the Harriman Institute.">
+	{% if title == 'Home' %}
+  <meta name="description" content="Home of Harriman Magazine, the magazine of the Harriman Institute.">
+  {% endif %}
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|EB+Garamond|Yantramanav:900" rel="stylesheet">
 	<link href="/dist/main.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
