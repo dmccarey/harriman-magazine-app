@@ -23,11 +23,11 @@ ssh -i $SSH_KEY_PATH $SERVER $PARAMS 'bash -i'  <<-'ENDSSH'
     git checkout $BRANCH
     git pull origin $BRANCH
 
-    rm -rf node_modules/
+    # rm -rf node_modules/
 
     pm2 stop all
 
-    npm install
+    # npm install
     pm2 start npm -- run start
     pm2 save
     pm2 list
