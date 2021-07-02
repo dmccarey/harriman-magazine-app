@@ -207,7 +207,7 @@
         <div class="col-sm-10 col-sm-offset-1">
         {% for article in content | offset: 7 %}
           <div class="story-list-item">
-            <h2><a href="/article/{{ article.nid }}">{{ article.title }}<a/></h2>
+            <h2><a href="/article/{{ article.nid }}">{{ article.title }}</a></h2>
             <p class="subtitle">{{ article.field_subtitle }}</p>
             <p class="author">{{ article.field_author }}</p>
           </div>
@@ -215,23 +215,25 @@
         </div>
         </div>
       </div>
-
       </div>
 
 
+      <div class="alumni-notes">
       <div class="container">
         <div class="row">
          <div class="col-sm-12">
-          {% for article in extras %}
-          {% if article.term_node_tid = 4 %}
-           <div class="director-letter" style="border-left: solid 4px {{ article.field_primary_color }}">
-          <h2><a href="/article/{{ article.nid }}">Alumni notes</a></h2>
-          <p><a href="/article/{{ article.nid }}">View Alumni Notes &raquo;</a></p>
-          {% endif %}
-          {% endfor %}
+         {% if notes.length > 0 %}
+         <h2>Alumni notes</h2>
+         {% endif %}
+         {% for article in notes %}
+          <div class="alumni-note-item">
+            <p>{{ article.body }}</p>
+          </div>
+         {% endfor %}
           </div>
          </div>
         </div>
+      </div>
       </div>
 
     </div>

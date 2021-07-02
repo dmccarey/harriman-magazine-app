@@ -496,7 +496,9 @@ body {
   }
 
   .alumni-notes {
-
+    h2 {
+      font-weight: bold;
+    }
   }
 }
 
@@ -758,10 +760,7 @@ h2.front-section {
   margin: 0 0 60px 0;
   background: #f2f2f2;
 }
-.alumni-notes {
-  padding: 15px 40px;
-  background: #f2f2f2;
-}
+
 .director-letter h2,
 .alumni-notes h2 {
   font-weight: 700;
@@ -795,4 +794,17 @@ h2.front-section {
   height: 100px;
   border-radius: 50%;
   margin: 0 auto;
+}
+
+.alumni-notes h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.alumni-note-item {
+  margin: 20px 0;
+  padding: 0 0 20px 0;
+  border-bottom: 2px solid #ddd;
 }

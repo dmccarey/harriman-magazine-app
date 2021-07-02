@@ -133,9 +133,11 @@ app.get('/issue/:nid', async function(req, res) {
   var nid = req.params.nid
   var issueContent = await getIssueContent(nid)
   var extraContent = await getExtraContent(nid)
+  var alumniNotes = await getAlumniNotes(nid)
     res.render('issue', {
       content: issueContent,
-      extras: extraContent
+      extras: extraContent,
+      notes: alumniNotes
     })
 })
 
@@ -148,6 +150,7 @@ function getIssueContent(nid) {
      json: true
     }, function(error, response, content) {
      if (!error && response.statusCode === 200) {
+       console.log(content)
        resolve(content)
      }
   })
@@ -168,6 +171,19 @@ function getExtraContent(nid) {
   })
  }
 
+ function getAlumniNotes(nid) {
+  return new Promise(function(resolve, reject) {
+    var endpoint = config.apiUrl + '/notes/' + nid
+     request({
+     url: endpoint,
+     json: true
+    }, function(error, response, content) {
+     if (!error && response.statusCode === 200) {
+       resolve(content)
+     }
+   })
+  })
+ }
 
 /*
  * Route: Issues
@@ -306,3 +322,26 @@ app.get('/article/:nid', function(req, res) {
      })
 
 })
+
+
+/*
+ * Route: Alumni note
+ * =============================================================================
+ */
+app.get('/note/:nid', function(req, res) {
+  var nid = req.params.nid
+  var endpoint = config.apiUrl + '/note/' + nid
+   request({
+   url: endpoint,
+   json: true
+ }, function(error, response, content) {
+   if (!error && response.statusCode === 200) {
+     if (content[0]) {
+       content[0].body = content[0].body.replace(/\/sites\/default\/files/g, 'https://api.magazine.harriman.danmccarey.com/sites/default/files')
+     }
+        res.render('article', { content: content[0] })
+       }
+     })
+
+})
+
