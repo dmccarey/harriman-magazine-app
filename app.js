@@ -295,7 +295,6 @@ app.get('/alumni-notes', function(req, res) {
    url: endpoint,
    json: true
  }, function(error, response, content) {
-   console.log(content)
    if (!error && response.statusCode === 200) {
         res.render('category', { content: content, category: "Alumni Notes" })
        }
@@ -317,6 +316,7 @@ app.get('/article/:nid', function(req, res) {
      if (content[0]) {
        content[0].body = content[0].body.replace(/\/sites\/default\/files/g, 'https://api.magazine.harriman.danmccarey.com/sites/default/files')
      }
+       console.log(content)
         res.render('article', { content: content[0] })
        }
      })
