@@ -5,7 +5,10 @@
 	<link rel="shortcut icon" href="/dist/favicon-crown.png" type="image/png" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 	{% if title == 'Home' %}
-  <meta name="description" content="Home of Harriman Magazine, the magazine of the Harriman Institute.">
+    <meta name="description" content="The magazine of the Harriman Institute.">
+  {% endif %}
+	{% if subtitle !== "" %}
+    <meta name="description" content="{{ subtitle }}">
   {% endif %}
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|EB+Garamond|Yantramanav:900" rel="stylesheet">
 	<link href="/dist/main.css" rel="stylesheet">
