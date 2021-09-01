@@ -345,3 +345,45 @@ app.get('/note/:nid', function(req, res) {
 
 })
 
+
+/*
+ * Route: about
+ * =============================================================================
+ */
+app.get('/about', function(req, res) {
+  var nid = req.params.nid
+  var endpoint = config.apiUrl + '/page/106'
+   request({
+   url: endpoint,
+   json: true
+ }, function(error, response, content) {
+   if (!error && response.statusCode === 200) {
+     if (content[0]) {
+       content[0].body = content[0].body.replace(/\/sites\/default\/files/g, 'https://api.magazine.harriman.danmccarey.com/sites/default/files')
+     }
+        res.render('article', { content: content[0] })
+       }
+     })
+})
+
+
+/*
+ * Route: about
+ * =============================================================================
+ */
+app.get('/contact', function(req, res) {
+  var nid = req.params.nid
+  var endpoint = config.apiUrl + '/page/107'
+   request({
+   url: endpoint,
+   json: true
+ }, function(error, response, content) {
+   if (!error && response.statusCode === 200) {
+     if (content[0]) {
+       content[0].body = content[0].body.replace(/\/sites\/default\/files/g, 'https://api.magazine.harriman.danmccarey.com/sites/default/files')
+     }
+        res.render('article', { content: content[0] })
+       }
+     })
+})
+

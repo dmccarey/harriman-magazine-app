@@ -19,6 +19,20 @@ body {
   }
 }
 
+.top-bar {
+  background: #083552;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: serif;
+  font-size: 16px;
+  padding: 5px 0;
+
+  a {
+    color: #fff;
+  }
+}
+
 .Light {
   color: #fff !important;
   .header-sm {
@@ -148,20 +162,7 @@ body {
     opacity: 0.5;
   }
 
-  .tagline {
-    background: url('/dist/assets/tagline-lg-light.png') no-repeat center center;
-    display: block;
-    background-size: contain;
-    text-indent: -9999px;
-    margin-top: 40px;
-    height: 45px;
-    @media(max-width: 1000px) {
-        height: 40px;
-    }
-    @media(max-width: 600px) {
-        height: 20px;
-    }
-  }
+ 
   .logo {
     background: url('/dist/assets/logo-lg-light-mag.png') no-repeat center center;
     display: block;
@@ -169,7 +170,7 @@ body {
     height: 220px;
     text-indent: -9999px;
     width: 100%;
-    margin: 0;
+    margin: 30px 0 0 0;
       @media(max-width: 1200px) {
           height: 200px;
       }
@@ -195,7 +196,7 @@ body {
     position: relative;
   }
   .btn-menu {
-    top: 20px;
+    top: 30px;
     right: 65px;
     z-index: 100;
     outline: none;
@@ -210,13 +211,6 @@ body {
     width: 250px;
     margin-top: 30px;
   }
-  .tagline {
-    background: url('/dist/assets/tagline-sm-dark.png') no-repeat;
-    height: 12px;
-    text-indent: -9999px;
-    opacity: 0.8;
-    background-size: contain;
-  }
   .logo {
     background: url('/dist/assets/logo-sm-dark.png') no-repeat;
     height: 50px;
@@ -226,7 +220,7 @@ body {
   }
   .logo-columbia-crest {
     right: 15px;
-    top: 15px;
+    top: 25px;
   }
   @media (max-width: 600px) {
     .logo-columbia-crest {
@@ -526,7 +520,7 @@ body {
    }
    .story-grid-column--content {
      position: absolute;
-     bottom: 0;
+     top: 320px;
      left: 0;
      z-index: 100;
      padding: 30px;
@@ -606,13 +600,17 @@ h2.front-section {
 
 
 .main-menu {
-  background: rgba(0,0,0,0.9);
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 10000;
   display: none;
+}
+.main-menu--content {
+  background: rgba(0,0,0,0.9);
+  z-index: 100;
+  position: relative;
 }
 .main-menu .container {
   position: relative;
@@ -665,6 +663,11 @@ h2.front-section {
     width: 180px;
   }
 }
+.mask {
+  height: 100vh;
+  width: 100%;
+  z-index: 0;
+}
 
 .btn-close {
   font-family: "Raleway", sans-serif;
@@ -672,10 +675,12 @@ h2.front-section {
   color: #fff;
   border: none;
   font-weight: bold;
+  cursor: pointer;
   font-size: 20px;
+  z-index: 100;
   position: absolute;
   right: 40px;
-  top: 30px;
+  top: 40px;
 }
 .btn-close:hover,
 .btn-close:focus {
