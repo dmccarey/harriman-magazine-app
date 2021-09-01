@@ -290,13 +290,13 @@ app.get('/spotlights', function(req, res) {
 })
 
 app.get('/alumni-notes', function(req, res) {
-  var endpoint = config.apiUrl + '/categories/4'
+  var endpoint = config.apiUrl + '/notes'
    request({
    url: endpoint,
    json: true
  }, function(error, response, content) {
    if (!error && response.statusCode === 200) {
-        res.render('category', { content: content, category: "Alumni Notes" })
+        res.render('notes', { content: content, category: "Alumni Notes" })
        }
      })
 })
