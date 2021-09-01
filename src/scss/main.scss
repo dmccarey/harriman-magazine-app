@@ -663,6 +663,28 @@ h2.front-section {
     width: 180px;
   }
 }
+.main-menu form {
+  position: relative;
+}
+.main-menu input {
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #555;
+  outline: none;
+  width: 100%;
+  font-size: 18px;
+  color: #fff;
+}
+.main-menu .search-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: transparent;
+  color: #fff;
+  border: none;
+}
 .mask {
   height: 100vh;
   width: 100%;
@@ -812,4 +834,32 @@ h2.front-section {
   margin: 20px 0;
   padding: 0 0 20px 0;
   border-bottom: 2px solid #ddd;
+}
+
+.search {
+  background: #111;
+  padding: 100px 0;
+  h2 {
+    color: #777;
+  }
+  a {
+    color: #fff;
+    display: block;
+    margin: 20px 0;
+    font-size: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+  }
+  a span {
+    color: #777;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  a:hover {
+    color: #fff;
+    opacity: 0.7;
+  }
+  p {
+    color: #ccc;
+  }
 }

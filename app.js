@@ -387,3 +387,31 @@ app.get('/contact', function(req, res) {
      })
 })
 
+
+
+/*
+ * Route: search
+ * =============================================================================
+ */
+app.get('/search', function(req, res) {
+  res.render('search')
+})
+
+
+
+/*
+ * Route: search query
+ * =============================================================================
+ */
+app.get('/search/:query', function(req, res) {
+  var query = req.params.query
+  var endpoint = config.apiUrl + '/search/?search=' + query + '&title=' + query
+   request({
+   url: endpoint,
+   json: true
+ }, function(error, response, content) {
+   if (!error && response.statusCode === 200) {
+      res.render('search', { content: content })
+    }
+  })
+})
