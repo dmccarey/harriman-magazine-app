@@ -220,16 +220,18 @@
       <div class="alumni-notes">
       <div class="container">
         <div class="row">
-         <div class="col-sm-8 col-sm-offset-2">
          {% if notes.length > 0 %}
+         <div class="col-sm-12">
          <h2>Alumni notes</h2>
+         </div>
          {% endif %}
          {% for article in notes %}
+          <div class="col-sm-3">
           <div class="alumni-note-item">
-            <p>{{ article.body }}</p>
+            <p><a href="/note/{{article.nid}}">{{ article.title }}</a></p>
+          </div>
           </div>
          {% endfor %}
-          </div>
          </div>
         </div>
       </div>

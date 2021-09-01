@@ -832,10 +832,16 @@ h2.front-section {
 
 .alumni-note-item {
   margin: 20px 0;
+  height: 120px;
   padding: 0 0 20px 0;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
 }
-
+.alumni-note-item a {
+  max-height: 100px;
+  display: block;
+  overflow: hidden;
+}
 .search {
   background: #111;
   padding: 100px 0;
