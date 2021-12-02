@@ -1,10 +1,9 @@
 {% include "head" title=content.title subtitle=content.field_subtitle image=content.field_thumbnail %}
 
-<div class="article {{ content.field_theme }}">
+<div class="article {{ content.field_theme }} {{ content.field_secondary_text_color }}">
 
   <div class="header-sm" style="background: {{ content.field_secondary_color }};">
    <div class="container">
-     <a href="https://www.columbia.edu/" class="logo-columbia-crest">Columbia University</a>
      <button class="btn-menu">
        <span class="bar"></span>
        <span class="bar"></span>
@@ -23,7 +22,7 @@
 {% include "menu" %}
 
 
-<div class="article-header" style="background: {{ content.field_secondary_color }}; border-bottom: 4px solid {{ content.field_primary_color }};">
+<div class="article-header {{ content.field_secondary_text_color }}" style="background: {{ content.field_secondary_color }}; border-bottom: 4px solid {{ content.field_primary_color }};">
  <div class="container">
  <div class="row">
    <div class="col-sm-10 col-sm-offset-1">

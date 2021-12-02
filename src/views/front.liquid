@@ -1,10 +1,9 @@
 {% include "head" title="Home" %}
 
 <div class="front">
-  <div class="{{ config.field_primary_text_color_page }}">
+  <div class="{{ config.field_secondary_text_color_page }}">
     <div class="header-lg" style="background: {{ config.field_secondary_color }};">
      <div class="container">
-       <a href="https://www.columbia.edu/" class="logo-columbia-crest">Columbia University</a>
        <button class="btn-menu">
          <span class="bar"></span>
          <span class="bar"></span>
@@ -23,7 +22,7 @@
 
   {% include "menu" %}
 
-<div class="featured {{ config.field_primary_text_color_page }}" style="background: {{ config.field_secondary_color }};">
+<div class="featured {{ config.field_secondary_text_color_page }}" style="background: {{ config.field_secondary_color }};">
   <div class="container">
    <div class="row">
    <div class="col-sm-12">
@@ -50,7 +49,7 @@
 <div class="page" style="border-top: 4px solid {{ config.field_primary_color }};">
  <div class="container">
    <h2 class="front-section">Featured</h2>
-  <div class="row {{ config.field_secondary_text_color_page }}">
+  <div class="row {{ config.field_primary_text_color_page }}">
     <div class="story-grid">
     {% for article in content | limit: 1 | offset: 1 %}
     <div class="col-sm-4">

@@ -26,6 +26,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(expressLiquid.middleware)
 
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+
 /*
  * App listen on port 3000
  *
@@ -72,6 +74,8 @@ function getFrontPageConfig() {
  }, function(error, response, content) {
    if (!error && response.statusCode === 200) {
      resolve(content)
+   } else {
+     console.log(error)
    }
  })
 })

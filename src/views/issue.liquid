@@ -7,11 +7,10 @@
     {% endfor %}
 
     {% for article in content | limit: 1 %}
-    <div class="issue {{ article.field_primary_text_color }}">
+    <div class="issue {{ article.field_secondary_text_color }}">
     <div class="header-sm" style="background: {{ article.field_secondary_color }};">
     {% endfor %}
      <div class="container">
-       <a href="https://www.columbia.edu/" class="logo-columbia-crest">Columbia University</a>
        <button class="btn-menu">
          <span class="bar"></span>
          <span class="bar"></span>
@@ -30,7 +29,7 @@
     {% include "menu" %}
 
     {% for article in content | limit: 1 %}
-    <div class="issue-header {{ article.field_primary_text_color }}" style="background: {{ article.field_secondary_color }}; border-bottom: 4px solid {{ article.field_primary_color }};">
+    <div class="issue-header {{ article.field_secondary_text_color }}" style="background: {{ article.field_secondary_color }}; border-bottom: 4px solid {{ article.field_primary_color }};">
     {% endfor %}
       <div class="container">
         <div class="row">
@@ -44,11 +43,6 @@
                </div>
               </a>
                <div class="row">
-                 <div class="col-sm-4">
-                   <div class="issue-hero-number">
-                   <b>{{ article.issue }}</b>
-                   </div>
-                 </div>
                  <div class="col-sm-8">
                    <div class="issue-hero-content">
                       <a href="/article/{{ article.nid }}"><h1>{{ article.title }}</h1></a>
@@ -56,6 +50,11 @@
                       <p class="author">{{ article.field_author }}</p>
                    </div>
                 </div>
+                <div class="col-sm-4">
+                   <div class="issue-hero-number">
+                   <b>{{ article.issue }}</b>
+                   </div>
+                 </div>
                </div>
             </div>
 
@@ -95,7 +94,7 @@
            {% for article in content | limit: 1 | offset: 1 %}
            {% if article.term_node_tid != 36 %}
             <a href="/article/{{ article.nid }}">
-            <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+            <div class="story-grid-column {{ article.field_primary_text_color }}" style="background: {{ article.field_primary_color }}">
               <div class="story-grid-column--image" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat; background-size: cover;"></div>
               <div class="story-grid-column--content">
                  <h2>{{ article.title }}</h2>
@@ -112,7 +111,7 @@
             {% for article in content | limit: 1 | offset: 2 %}
             {% if article.term_node_tid != 36 %}
              <a href="/article/{{ article.nid }}">
-            <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+            <div class="story-grid-column {{ article.field_primary_text_color }}" style="background: {{ article.field_primary_color }}">
               <div class="story-grid-column--image story-grid-column--image-bottom" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat center center; background-size: cover;"></div>
               <div class="story-grid-column--content story-grid-column--content-top">
                 <h2>{{ article.title }}</h2>
@@ -129,7 +128,7 @@
             {% for article in content | limit: 1 | offset: 3 %}
             {% if article.term_node_tid != 36 %}
              <a href="/article/{{ article.nid }}">
-            <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+            <div class="story-grid-column {{ article.field_primary_text_color }}" style="background: {{ article.field_primary_color }}">
               <div class="story-grid-column--image" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat center bottom; background-size: cover;"></div>
               <div class="story-grid-column--content">
                 <h2>{{ article.title }}</h2>
@@ -150,7 +149,7 @@
          {% for article in content | limit: 1 | offset: 4 %}
          {% if article.term_node_tid != 36 %}
           <a href="/article/{{ article.nid }}">
-          <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+          <div class="story-grid-column {{ article.field_primary_text_color }}" style="background: {{ article.field_primary_color }}">
             <div class="story-grid-column--image" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat; background-size: cover;"></div>
             <div class="story-grid-column--content">
                <h2>{{ article.title }}</h2>
@@ -167,7 +166,7 @@
           {% for article in content | limit: 1 | offset: 5 %}
            {% if article.term_node_tid != 36 %}
            <a href="/article/{{ article.nid }}">
-          <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+          <div class="story-grid-column {{ article.field_primary_text_color }}" style="background: {{ article.field_primary_color }}">
             <div class="story-grid-column--image story-grid-column--image-bottom" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat center center; background-size: cover;"></div>
             <div class="story-grid-column--content story-grid-column--content-top">
               <h2>{{ article.title }}</h2>
@@ -184,7 +183,7 @@
           {% for article in content | limit: 1 | offset: 6 %}
           {% if article.term_node_tid != 36 %}
            <a href="/article/{{ article.nid }}">
-          <div class="story-grid-column {{ article.field_secondary_text_color }}" style="background: {{ article.field_primary_color }}">
+          <div class="story-grid-column {{ article.field_primary_text_color }}" style="background: {{ article.field_primary_color }}">
             <div class="story-grid-column--image" style="background: url(http://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat center bottom; background-size: cover;"></div>
             <div class="story-grid-column--content">
               <h2>{{ article.title }}</h2>

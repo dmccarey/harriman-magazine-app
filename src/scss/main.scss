@@ -3,6 +3,13 @@
 @import "partials/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Raleway|Yantramanav:400,700,800&display=swap');
 
+@font-face {
+  font-family: 'Trajan Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Trajan Pro Regular'), url('/dist/assets/TrajanPro-Regular.woff') format('woff');
+  }
+  
 
 .container {
   max-width: 1000px;
@@ -20,13 +27,14 @@ body {
 }
 
 .top-bar {
-  background: #083552;
+  background: #222;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
-  font-family: serif;
-  font-size: 16px;
-  padding: 5px 0;
+  font-family: "Trajan Pro Regular", serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 6px 0 3px 0;
 
   a {
     color: #fff;
@@ -196,8 +204,8 @@ body {
     position: relative;
   }
   .btn-menu {
-    top: 30px;
-    right: 65px;
+    top: 20px;
+    right: 10px;
     z-index: 100;
     outline: none;
   }
@@ -465,6 +473,7 @@ body {
       padding: 40px 0;
       font-size: 20px;
       text-transform: uppercase;
+      text-align: right;
     }
     .issue-hero-content {
       padding: 40px 0;
@@ -617,6 +626,7 @@ h2.front-section {
 }
 .main-menu .content {
   padding: 40px;
+  position: relative;
   color: #fff;
   @media(max-width: 700px) {
     padding: 40px 15px;
@@ -650,6 +660,23 @@ h2.front-section {
   @media(max-width: 700px) {
     margin: 0 0 20px 0;
   }
+}
+.main-menu ul.social-media-icons {
+  margin-top: 180px;
+  text-align: right;
+}
+.main-menu ul.social-media-icons li {
+  display: inline-block;
+}
+.main-menu ul.social-media-icons li a {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin: 0 10px 0 0;
+  white-space: nowrap;
+  border-radius: 50%;
+  border: 2px solid #999999;
+  text-indent: 9999px;
 }
 .main-menu .search-input {
   background: #000;
@@ -733,6 +760,9 @@ h2.front-section {
 .footer .legal {
   font-size: 12px;
 }
+.footer ul.social-media-icons {
+  white-space: nowrap;
+}
 .footer ul.social-media-icons li {
   display: inline-block;
 }
@@ -769,6 +799,10 @@ h2.front-section {
 }
 .icon-youtube {
   background: url('/dist/assets/icon-youtube.png') no-repeat center center;
+  background-size: 50%;
+}
+.icon-linkedin {
+  background: url('/dist/assets/icon-linkedin.png') no-repeat center center;
   background-size: 50%;
 }
 
