@@ -309,9 +309,13 @@ app.get('/alumni-notes', function(req, res) {
  * Route: Article
  * =============================================================================
  */
-app.get('/article/:nid', function(req, res) {
-  var nid = req.params.nid
-  var endpoint = config.apiUrl + '/article/' + nid
+app.get('/article/:id', function(req, res) {
+  const id = req.params.id
+  let param = '/article/'
+  if (!Number(id)) {
+    param = '/article-slug/'
+  }
+  var endpoint = config.apiUrl + param + id
    request({
    url: endpoint,
    json: true

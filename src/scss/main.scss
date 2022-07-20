@@ -574,14 +574,18 @@ body {
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #ddd;
+    color: #000 !important;
     h2 {
       margin-top: 0;
       font-weight: 700;
     }
     h2 a {
-      color: #000;
+      color: #000 !important;
     }
   }
+}
+.Light .story-list-item h2 a {
+  color: #000 !important;
 }
 
 .cover-image {

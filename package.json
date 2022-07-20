@@ -39,7 +39,7 @@
     "minifier": "^0.8.1",
     "moment": "^2.19.2",
     "node-fetch": "^2.6.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.4",
     "promise": "^8.0.3",
     "redis": "^2.7.1",
