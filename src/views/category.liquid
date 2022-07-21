@@ -31,7 +31,11 @@
 
        {% for article in content  %}
        <div class="col-sm-4">
-        <a href="/article/{{ article.nid }}">
+        {% if article.field_slug %}
+          <a href="/article/{{ article.field_slug }}">
+        {% else %}
+          <a href="/article/{{ article.nid }}">
+        {% endif %}
         <div class="story-grid-column Dark">
           <div class="story-grid-column--image" style="background: url(https://api.magazine.harriman.danmccarey.com{{ article.field_thumbnail }}) no-repeat; background-size: cover;"></div>
           <div class="story-grid-column--content">

@@ -277,10 +277,16 @@
          <h2>Alumni notes</h2>
          </div>
          {% endif %}
-         {% for article in notes %}
+         {% for note in notes %}
           <div class="col-sm-3">
           <div class="alumni-note-item">
-            <p><a href="/note/{{article.nid}}">{{ article.title }}</a></p>
+            <p>
+            {% if note.field_slug %}
+              <a href="/note/{{note.field_slug}}">{{ note.title }}</a>
+            {% else %}
+              <a href="/note/{{note.nid}}">{{ note.title }}</a>
+            {% endif %}
+            </p>
           </div>
           </div>
          {% endfor %}

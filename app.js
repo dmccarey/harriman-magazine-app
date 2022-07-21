@@ -133,11 +133,11 @@ function getIssues() {
  * Route: Issue
  * =============================================================================
  */
-app.get('/issue/:nid', async function(req, res) {
-  var nid = req.params.nid
-  var issueContent = await getIssueContent(nid)
-  var extraContent = await getExtraContent(nid)
-  var alumniNotes = await getAlumniNotes(nid)
+app.get('/issue/:id', async function(req, res) {
+  const id = req.params.id
+  var issueContent = await getIssueContent(id)
+  var extraContent = await getExtraContent(id)
+  var alumniNotes = await getAlumniNotes(id)
     res.render('issue', {
       content: issueContent,
       extras: extraContent,
@@ -146,9 +146,13 @@ app.get('/issue/:nid', async function(req, res) {
 })
 
 
-function getIssueContent(nid) {
+function getIssueContent(id) {
   return new Promise(function(resolve, reject) {
-    var endpoint = config.apiUrl + '/issue/' + nid
+    let param = '/issue/'
+    if (!Number(id)) {
+      param = '/issue-slug/'
+    }
+    var endpoint = config.apiUrl + param + id
      request({
      url: endpoint,
      json: true
@@ -161,9 +165,13 @@ function getIssueContent(nid) {
  })
 }
 
-function getExtraContent(nid) {
+function getExtraContent(id) {
   return new Promise(function(resolve, reject) {
-    var endpoint = config.apiUrl + '/extras/' + nid
+    let param = '/issue/'
+    if (!Number(id)) {
+      param = '/issue-slug/'
+    }
+    var endpoint = config.apiUrl + param + id
      request({
      url: endpoint,
      json: true
@@ -175,9 +183,9 @@ function getExtraContent(nid) {
   })
  }
 
- function getAlumniNotes(nid) {
+ function getAlumniNotes(id) {
   return new Promise(function(resolve, reject) {
-    var endpoint = config.apiUrl + '/notes/' + nid
+    var endpoint = config.apiUrl + '/issue-alumni-notes/' + id
      request({
      url: endpoint,
      json: true
@@ -324,7 +332,6 @@ app.get('/article/:id', function(req, res) {
      if (content[0]) {
        content[0].body = content[0].body.replace(/\/sites\/default\/files/g, 'https://api.magazine.harriman.danmccarey.com/sites/default/files')
      }
-       console.log(content)
         res.render('article', { content: content[0] })
        }
      })
@@ -336,9 +343,13 @@ app.get('/article/:id', function(req, res) {
  * Route: Alumni note
  * =============================================================================
  */
-app.get('/note/:nid', function(req, res) {
-  var nid = req.params.nid
-  var endpoint = config.apiUrl + '/note/' + nid
+app.get('/note/:id', function(req, res) {
+  var id = req.params.id
+  let param = '/note/'
+  if (!Number(id)) {
+    param = '/note-slug/'
+  }
+  var endpoint = config.apiUrl + param + id
    request({
    url: endpoint,
    json: true
@@ -347,6 +358,7 @@ app.get('/note/:nid', function(req, res) {
      if (content[0]) {
        content[0].body = content[0].body.replace(/\/sites\/default\/files/g, 'https://api.magazine.harriman.danmccarey.com/sites/default/files')
      }
+     console.log(content)
         res.render('article', { content: content[0] })
        }
      })

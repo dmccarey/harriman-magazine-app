@@ -575,6 +575,9 @@ body {
     padding-bottom: 20px;
     border-bottom: 1px solid #ddd;
     color: #000 !important;
+    a {
+      color: #000 !important;
+    }
     h2 {
       margin-top: 0;
       font-weight: 700;
@@ -582,6 +585,9 @@ body {
     h2 a {
       color: #000 !important;
     }
+  }
+  .story-list-item:last-child {
+    border-bottom: 0;
   }
 }
 .Light .story-list-item h2 a {

@@ -103,7 +103,11 @@
     <div class="row">
   {% for issue in issues | limit: 4 %}
     <div class="col-xs-6 col-sm-3">
-      <a href="/issue/{{ issue.nid }}">
+      {% if issue.field_slug %}
+        <a href="/issue/{{ issue.field_slug }}">
+      {% else %}
+        <a href="/issue/{{ issue.nid }}">   
+      {% endif %}
         {% if issue.field_cover_image %}
         <img class="cover-image" src="http://api.magazine.harriman.danmccarey.com/{{ issue.field_cover_image }}" />
         {% else %}
