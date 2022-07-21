@@ -40,6 +40,11 @@ body {
     color: #fff;
   }
 }
+@media(max-width: 600px) {
+  .top-bar {
+    font-size: 12px;
+  }
+}
 
 .Light {
   color: #fff !important;
@@ -585,6 +590,13 @@ body {
     h2 a {
       color: #000 !important;
     }
+    p {
+      font-size: 18px;
+    }
+    p.author {
+      color: #555;
+      font-size: 14px;
+    }
   }
   .story-list-item:last-child {
     border-bottom: 0;
@@ -880,11 +892,11 @@ h2.front-section {
   padding: 0 0 20px 0;
   border-bottom: 1px solid #ddd;
   overflow: hidden;
+  color: #555;
 }
 .alumni-note-item a {
-  max-height: 100px;
-  display: block;
-  overflow: hidden;
+  font-size: 18px;
+  color: #000;
 }
 .search {
   background: #111;

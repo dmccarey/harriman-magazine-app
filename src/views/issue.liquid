@@ -126,7 +126,9 @@
               <div class="story-grid-column--content">
                  <h2>{{ article.title }}</h2>
                  <p class="subtitle">{{ article.field_subtitle }}</p>
-                 <p class="author">{{ article.field_author }}</p>
+                 {% if article.authors %}
+                   <p class="author">By {{ article.authors }}</p>
+                 {% endif %}
               </div>
               <div class="story-grid-column--mask story-grid-column--mask-left" style="background: {{ article.field_primary_color }}"></div>
             </div>
@@ -147,7 +149,9 @@
               <div class="story-grid-column--content story-grid-column--content-top">
                 <h2>{{ article.title }}</h2>
                 <p class="subtitle">{{ article.field_subtitle }}</p>
-                <p class="author">{{ article.field_author }}</p>
+                {% if article.authors %}
+                   <p class="author">By {{ article.authors }}</p>
+                 {% endif %}
               </div>
               <div class="story-grid-column--mask story-grid-column--mask-center" style="background: {{ article.field_primary_color }}"></div>
             </div>
@@ -168,7 +172,9 @@
               <div class="story-grid-column--content">
                 <h2>{{ article.title }}</h2>
                 <p class="subtitle">{{ article.field_subtitle }}</p>
-                <p class="author">{{ article.field_author }}</p>
+                {% if article.authors %}
+                   <p class="author">By {{ article.authors }}</p>
+                 {% endif %}
               </div>
               <div class="story-grid-column--mask story-grid-column--mask-right" style="background: {{ article.field_primary_color }}"></div>
             </div>
@@ -193,7 +199,9 @@
             <div class="story-grid-column--content">
                <h2>{{ article.title }}</h2>
                <p class="subtitle">{{ article.field_subtitle }}</p>
-               <p class="author">{{ article.field_author }}</p>
+               {% if article.authors %}
+                   <p class="author">By {{ article.authors }}</p>
+                 {% endif %}
             </div>
             <div class="story-grid-column--mask story-grid-column--mask-left" style="background: {{ article.field_primary_color }}"></div>
           </div>
@@ -214,7 +222,9 @@
             <div class="story-grid-column--content story-grid-column--content-top">
               <h2>{{ article.title }}</h2>
               <p class="subtitle">{{ article.field_subtitle }}</p>
-              <p class="author">{{ article.field_author }}</p>
+              {% if article.authors %}
+                   <p class="author">By {{ article.authors }}</p>
+                 {% endif %}
             </div>
             <div class="story-grid-column--mask story-grid-column--mask-center" style="background: {{ article.field_primary_color }}"></div>
           </div>
@@ -235,7 +245,9 @@
             <div class="story-grid-column--content">
               <h2>{{ article.title }}</h2>
               <p class="subtitle">{{ article.field_subtitle }}</p>
-              <p class="author">{{ article.field_author }}</p>
+              {% if article.authors %}
+                   <p class="author">By {{ article.authors }}</p>
+                 {% endif %}
             </div>
             <div class="story-grid-column--mask story-grid-column--mask-right" style="background: {{ article.field_primary_color }}"></div>
           </div>
@@ -260,7 +272,9 @@
             {% endif %}
             </h2>
             <p class="subtitle">{{ article.field_subtitle }}</p>
-            <p class="author">{{ article.field_author }}</p>
+            {% if article.authors %}
+              <p class="author">By {{ article.authors }}</p>
+            {% endif %}
           </div>
         {% endfor %}
         </div>
@@ -280,13 +294,16 @@
          {% for note in notes %}
           <div class="col-sm-3">
           <div class="alumni-note-item">
-            <p>
+            <div>
             {% if note.field_slug %}
-              <a href="/note/{{note.field_slug}}">{{ note.title }}</a>
+              <a href="/note/{{note.field_slug}}">{{ note.field_first_name }} {{ note.field_last_name }}</a>
             {% else %}
-              <a href="/note/{{note.nid}}">{{ note.title }}</a>
+             <a href="/note/{{note.nid}}">
+             {{ note.field_first_name }} {{ note.field_last_name }}
+             </a>
             {% endif %}
-            </p>
+              <p>{{ note.field_description }}</p>
+            </div>
           </div>
           </div>
          {% endfor %}

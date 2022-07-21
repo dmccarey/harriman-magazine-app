@@ -28,7 +28,9 @@
    <div class="col-sm-10 col-sm-offset-1">
      <h1>{{ content.title }}</h1>
      <p class="subtitle">{{ content.field_subtitle }}</p>
-     <p class="author">{{ content.authors }}</p>
+     {% if  content.authors %}
+     <p class="author">By {{ content.authors }}</p>
+     {% endif %}
      {% if content.translators %}
      <p class="translator">Translated by {{ content.translators }}</p>
      {% endif %}
