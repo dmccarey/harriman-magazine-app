@@ -381,7 +381,7 @@ app.get('/about', function(req, res) {
      if (content[0]) {
        content[0].body = content[0].body.replace(/\/sites\/default\/files/g, 'https://api.magazine.harriman.danmccarey.com/sites/default/files')
      }
-        res.render('article', { content: content[0] })
+        res.render('page', { content: content[0] })
        }
      })
 })

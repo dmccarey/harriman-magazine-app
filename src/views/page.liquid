@@ -1,22 +1,58 @@
-{% include "head" title="Home" %}
-{% include "header" user=user %}
+{% include "head" title=content.title subtitle=content.field_subtitle image=content.field_thumbnail %}
 
-<div class="interview">
-<div class="container">
-{% for interview in content %}
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-3">
-     <h1>{{ interview.title }}</h1>
-   </div>
- </div>
+<div class="article {{ content.field_theme }} {{ content.field_secondary_text_color_page }}">
+
+  <div class="header-sm" style="background: {{ content.field_secondary_color }};">
+   <div class="container">
+     <button class="btn-menu">
+       <span class="bar"></span>
+       <span class="bar"></span>
+       <span class="bar"></span>
+     </button>
  <div class="row">
-   <div class="col-sm-8 col-sm-offset-3">
-     <div class="interview-transcript">
-     {{ interview.body }}
-     </div>
+   <div class="col-sm-12">
+     <a class="brand" href="/">
+       <div class="logo">Harriman</div>
+     </a>
   </div>
  </div>
-{% endfor %}
 </div>
 </div>
-{% include "footer" title="Home" %}
+
+{% include "menu" %}
+
+
+<div class="article-header {{ content.field_secondary_text_color_page }}" style="background: {{ content.field_secondary_color }}; border-bottom: 4px solid {{ content.field_primary_color }};">
+ <div class="container">
+ <div class="row">
+   <div class="col-sm-10 col-sm-offset-1">
+     <h1>{{ content.title }}</h1>
+     <p class="subtitle">{{ content.field_subtitle }}</p>
+     {% if  content.authors %}
+     <p class="author">By {{ content.authors }}</p>
+     {% endif %}
+     {% if content.translators %}
+     <p class="translator">Translated by {{ content.translators }}</p>
+     {% endif %}
+     <p class="issue"><a href="/issue/{{ content.issue }}"><b>{{ content.issue_title }}</b></a></p>
+  </div>
+ </div>
+</div>
+</div>
+
+
+<div class="page">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="article-content">
+          {{ content.body }}
+        </div>
+      <div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% include "footer" %}
