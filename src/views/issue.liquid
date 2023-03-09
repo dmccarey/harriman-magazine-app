@@ -292,8 +292,10 @@
          </div>
          {% endif %}
          {% for note in notes %}
+          {% if note.field_first_name and note.field_last_name %}
           <div class="col-sm-3">
           <div class="alumni-note-item">
+            
             <div>
             {% if note.field_slug %}
               <a href="/note/{{note.field_slug}}">{{ note.field_first_name }} {{ note.field_last_name }}</a>
@@ -304,8 +306,10 @@
             {% endif %}
               <p>{{ note.field_description }}</p>
             </div>
+          
           </div>
           </div>
+        {% endif %}
          {% endfor %}
          </div>
         </div>

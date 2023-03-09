@@ -1,5 +1,9 @@
 {% include "head" title=content.title subtitle=content.field_subtitle image=content.field_thumbnail %}
-
+<style>
+		blockquote {
+		  border-color: {{ content.field_primary_color }} !important;
+		}
+	</style>
 <div class="article {{ content.field_theme }} {{ content.field_secondary_text_color }}">
 
   <div class="header-sm" style="background: {{ content.field_secondary_color }};">
@@ -28,8 +32,8 @@
    <div class="col-sm-10 col-sm-offset-1">
      <h1>{{ content.title }}</h1>
      <p class="subtitle">{{ content.field_subtitle }}</p>
-     {% if  content.authors %}
-     <p class="author">By {{ content.authors }}</p>
+     {% if content.authors %}
+     <p class="author">By {{ content.authors }}</span></p>
      {% endif %}
      {% if content.translators %}
      <p class="translator">Translated by {{ content.translators }}</p>
